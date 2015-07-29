@@ -4,23 +4,41 @@
 		<meta charset="utf-8">
 		<title>Snake</title>
 		<link rel="stylesheet" type="text/css" href="../css/snake.css">
-	</head>
-	<body>
 		<script src="../js/jquery-2.1.1.js"></script>
 		<script src="../js/snake.js"></script>
 		<script src="../js/board.js"></script>
 		<script src="../js/snakeView.js"></script>
+	</head>
+
+	<body>
+
 		<h1>Welcome to snake!!</h1>
-		<figure id="snake">
-			
-		</figure>
+
+		<div id="snake"></div>
+		<button class="start-snake">Start</button>
+		<button class="reset-snake hide">Reset</button>
+
 		<script>
 			$(function () {
 				var board = new SnakeGame.Board();
 				var view = new SnakeGame.View(board, $('#snake'));
+				$(".start-snake").on("click", function (event) {
+					view.startGame();
+					$(event.currentTarget).addClass("hide");
+					$(".reset-snake").removeClass("hide");
+				});
+
+				$(".reset-snake").on("click", function (event){
+					$("#snake").html("");
+					board = new SnakeGame.Board();
+					view = new SnakeGame.View(board, $('#snake'));
+					view.startGame();
+				});
 			})
 		</script>
 
 	</body>
+
+
 
 </html>

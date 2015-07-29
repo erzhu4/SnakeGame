@@ -59,26 +59,13 @@
 				 ) {
 				this.canTurn = false;
 				this.dir = dir;
-				console.log("snake can't turn now!");
 				var snake = this;
 				window.setTimeout(function(){
-					console.log("snake can turn again!");
 					snake.canTurn = true;
 				}, 100);
 			};
 		};
 
-		SnakeGame.Coord = {
-			plus: function(){
-
-			},
-			equals: function () {
-
-			},
-			isOpposite: function () {
-
-			}
-		};
 
 
 

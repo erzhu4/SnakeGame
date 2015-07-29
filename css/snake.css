@@ -40,3 +40,7 @@ h1 {
 .grid > .apple {
 	background: red;
 }
+
+.hide {
+	display: none;
+}
